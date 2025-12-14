@@ -18,8 +18,10 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            'name' => 'Carlos Admin',
+            'email' => 'carlosdiazvasquez625@gmail.com',
         ]);
+
+        $this-> call(WorldTableSeeder::class);
     }
 }
