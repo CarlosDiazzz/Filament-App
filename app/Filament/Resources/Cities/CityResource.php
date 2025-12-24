@@ -11,6 +11,7 @@ use App\Filament\Resources\Cities\Schemas\CityInfolist;
 use App\Filament\Resources\Cities\Tables\CitiesTable;
 use App\Models\City;
 use BackedEnum;
+use UnitEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
@@ -22,9 +23,14 @@ class CityResource extends Resource
 {
     protected static ?string $model = City::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::HomeModern;
+    
+    protected static string|UnitEnum|null $navigationGroup = 'Locations';
+
+    protected static ?int $navigationSort = 5;
 
     protected static ?string $recordTitleAttribute = 'City';
+
 
     public static function form(Schema $schema): Schema
     {
