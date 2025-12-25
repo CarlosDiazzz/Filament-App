@@ -31,6 +31,7 @@ class UserForm
                         ->required(),
                     TextInput::make('password')
                         ->password()
+                        ->hiddenOn('edit')
                         ->required(),
                 ]),
 
@@ -65,6 +66,10 @@ class UserForm
                         ->searchable()
                         ->preload()
                         ->live()
+                        ->required(),
+                    TextInput::make('address')
+                        ->required(),
+                    TextInput::make('postal_code')
                         ->required(),
                 ]),
 

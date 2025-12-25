@@ -11,6 +11,7 @@ use App\Filament\Resources\States\Schemas\StateInfolist;
 use App\Filament\Resources\States\Tables\StatesTable;
 use App\Models\State;
 use BackedEnum;
+use UnitEnum;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
@@ -22,7 +23,11 @@ class StateResource extends Resource
 {
     protected static ?string $model = State::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::BuildingLibrary;
+
+    protected static string|UnitEnum|null $navigationGroup = 'Locations';
+
+    protected static ?int $navigationSort = 4;
 
     protected static ?string $recordTitleAttribute = 'State';
 
